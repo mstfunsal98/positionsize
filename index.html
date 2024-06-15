@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Calculator</h1>
+        <div class="input-group">
+            <label for="fundSize">Fund Size:</label>
+            <input type="number" id="fundSize" placeholder="Enter fund size">
+        </div>
+        <div class="input-group">
+            <label for="fundLoss">Fund Loss %:</label>
+            <input type="number" id="fundLoss" placeholder="Enter fund loss %">
+        </div>
+        <div class="input-group">
+            <label for="stopLoss">Stop Loss %:</label>
+            <input type="number" id="stopLoss" placeholder="Enter stop loss %">
+        </div>
+        <button onclick="calculate()">Calculate</button>
+        <div class="result" id="result"></div>
+
+        <div class="dropdown">
+            <button onclick="toggleDropdown()">Other Calculation</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <div class="input-group">
+                    <label for="entryPrice">Entry Price:</label>
+                    <input type="number" id="entryPrice" placeholder="Enter entry price">
+                </div>
+                <div class="input-group">
+                    <label for="stopLossPercent">Stop Loss %:</label>
+                    <input type="number" id="stopLossPercent" placeholder="Enter stop loss %">
+                </div>
+                <button onclick="calculateStopPrice()">Calculate Stop Price</button>
+                <div class="result" id="stopPriceResult"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
