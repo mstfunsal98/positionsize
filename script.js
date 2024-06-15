@@ -19,9 +19,15 @@ function toggleDropdown() {
 function calculateStopPrice() {
     const entryPrice = document.getElementById('entryPrice').value;
     const stopLossPercent = document.getElementById('stopLossPercent').value;
+    const tradeType = document.getElementById('tradeType').value;
 
     if (entryPrice && stopLossPercent) {
-        const stopPrice = entryPrice * (1 - stopLossPercent / 100);
+        let stopPrice;
+        if (tradeType === 'long') {
+            stopPrice = entryPrice * (1 - stopLossPercent / 100);
+        } else if (tradeType === 'short') {
+            stopPrice = entryPrice * (1 + stopLossPercent / 100);
+        }
         document.getElementById('stopPriceResult').textContent = `Stop Price: ${stopPrice}`;
     } else {
         document.getElementById('stopPriceResult').textContent = 'Please enter all values.';
